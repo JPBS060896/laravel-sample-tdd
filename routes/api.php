@@ -21,4 +21,7 @@ Route::prefix('v1')->group(function () {
     });
 
     Route::post('/notes/create', [NotesController::class, 'store'])->name('create');
+    Route::get('/notes/show/{id}', [NotesController::class, 'show'])->name('show');
+    Route::put('/notes/update/{id}', [NotesController::class, 'update'])->name('update');
+    Route::delete('/notes/delete/{id}', [NotesController::class, 'delete'])->name('delete');
 });
